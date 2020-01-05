@@ -29,6 +29,7 @@ go api 快速搭建框架
 
 - [ ] 加入vscode配置
 - [ ] 加入动态新增handler的支持(也许要支持autocompletion)
+- [ ] 加入helm charts
 
 ## 使用方法
 

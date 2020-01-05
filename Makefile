@@ -3,6 +3,8 @@ SWAG_VERSION_MAJAR=$(shell echo $(SWAG_VERSION) | cut -f1 -d.)
 SWAG_VERSION_MINOR=$(shell echo $(SWAG_VERSION) | cut -f2 -d.)
 SWAG_GT_1_6_0:=$(shell [ $(SWAG_VERSION_MAJAR) -gt 1 -o \( $(SWAG_VERSION_MAJAR) -eq 1 -a $(SWAG_VERSION_MINOR) -ge 6 \) ] && echo true)
 
+
+
 %:
 	@:
 
