@@ -1,0 +1,36 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Go API Template",
+        "title": "Go API Template",
+        "contact": {
+            "name": "Chenchuan.Song",
+            "email": "robscc269@gmail.com"
+        },
+        "license": {},
+        "version": "1.0.0"
+    },
+    "basePath": "/",
+    "paths": {
+        "/ping": {
+            "get": {
+                "description": "Ping server",
+                "produces": [
+                    "text/plain"
+                ],
+                "tags": [
+                    "Ping"
+                ],
+                "summary": "Ping",
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

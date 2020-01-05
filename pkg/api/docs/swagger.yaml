@@ -1,0 +1,24 @@
+basePath: /
+info:
+  contact:
+    email: robscc269@gmail.com
+    name: Chenchuan.Song
+  description: Go API Template
+  license: {}
+  title: Go API Template
+  version: 1.0.0
+paths:
+  /ping:
+    get:
+      description: Ping server
+      produces:
+      - text/plain
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+      summary: Ping
+      tags:
+      - Ping
+swagger: "2.0"
