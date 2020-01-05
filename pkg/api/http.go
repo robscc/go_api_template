@@ -19,6 +19,10 @@ import (
 // @contact.email robscc269@gmail.com
 // @BasePath /
 
+// @securityDefinitions.apikey ApiKeyAuth
+// @in header
+// @name X-API-KEY
+
 // ServeAPI ...
 func ServeAPI(cfg *Config) error {
 
@@ -34,6 +38,7 @@ func ServeAPI(cfg *Config) error {
 		ValidateHeaders: false,
 	}))
 	r.GET("/ping", controller.Ping)
+	r.GET("/test_auth", controller.TestAuth)
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	return r.Run(cfg.BindAddr)

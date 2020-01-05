@@ -4,21 +4,31 @@ go api 快速搭建框架
 
 ## require package
 
-| package | version |
-| ------- | ------- |
-| gin | 1.5.0 |
-| gin-cors | |
-| envconfig | 1.4.0 |
-| gin-swagger | 1.2.0 |
-| swaggo | v1.5.1 |
-| migrate | 4.2.2 |
+| package | version | 地址 |
+| ------- | ------- | --- |
+| gin | 1.5.0 | |
+| gin-cors | | |
+| envconfig | 1.4.0 | |
+| gin-swagger | 1.2.0 | |
+| swaggo | v1.5.1 | |
+| migrate | 4.2.2 | |
 
 ## todo list
 
-1. swagger 加入Auth支持
+- [x] swagger 加入Auth支持 
+- [ ] 加入快速复制并修改go mod 名字的能力
+- [ ] 加入更多http handler 示例
 
-2. 加入快速复制并修改go mod 名字的能力
+    - [x] Auth
+    - [x] Get
+    - [ ] Post
+    - [ ] PostFile
+    - [ ] Put
+    - [ ] Header
+    - [ ] Delete
 
-3. 加入更多http handler 示例
+- [ ] 加入vscode配置
+- [ ] 加入动态新增handler的支持(也许要支持autocompletion)
 
-4. 加入vscode配置
+## 使用方法
+

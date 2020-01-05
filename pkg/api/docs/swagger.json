@@ -31,6 +31,38 @@
                     }
                 }
             }
+        },
+        "/test_auth": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "TestAuth server",
+                "produces": [
+                    "text/plain"
+                ],
+                "tags": [
+                    "Ping"
+                ],
+                "summary": "TestAuth",
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "ApiKeyAuth": {
+            "type": "apiKey",
+            "name": "X-API-KEY",
+            "in": "header"
         }
     }
 }

@@ -21,4 +21,24 @@ paths:
       summary: Ping
       tags:
       - Ping
+  /test_auth:
+    get:
+      description: TestAuth server
+      produces:
+      - text/plain
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: TestAuth
+      tags:
+      - Ping
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: X-API-KEY
+    type: apiKey
 swagger: "2.0"
