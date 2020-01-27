@@ -1,4 +1,21 @@
 basePath: /
+definitions:
+  controller.PostSampleParams:
+    properties:
+      sample_Key:
+        description: sample key is sample and must be valued when post to server
+        type: string
+    required:
+    - sample_Key
+    type: object
+  controller.PutSampleParams:
+    properties:
+      sample_Key:
+        description: sample key is sample and must be valued when post to server
+        type: string
+    required:
+    - sample_Key
+    type: object
 info:
   contact:
     email: robscc269@gmail.com
@@ -21,6 +38,102 @@ paths:
       summary: Ping
       tags:
       - Ping
+  /sample/delete_handler:
+    delete:
+      description: method sample delete
+      responses:
+        "204": {}
+      summary: DeleteHandler
+      tags:
+      - Method
+  /sample/get_handler:
+    get:
+      description: method sample get
+      produces:
+      - text/plain
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+      summary: GetHandler
+      tags:
+      - Method
+  /sample/post_file_handler:
+    post:
+      consumes:
+      - multipart/form-data
+      description: method sample post file
+      parameters:
+      - description: the file to upload
+        in: formData
+        name: file
+        required: true
+        type: file
+      produces:
+      - text/plain
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+        "400":
+          description: bad request
+          schema:
+            type: string
+      summary: PostFileHandler
+      tags:
+      - Method
+  /sample/post_handler:
+    post:
+      consumes:
+      - application/json
+      description: method sample post
+      parameters:
+      - description: PostSampleParams the sample_key is required
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/controller.PostSampleParams'
+          type: object
+      produces:
+      - text/plain
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+        "400":
+          description: bad request
+          schema:
+            type: string
+      summary: PostHandler
+      tags:
+      - Method
+  /sample/put_handle:
+    put:
+      consumes:
+      - application/json
+      description: method sample put
+      parameters:
+      - description: PutSampleParams the sample_key is required
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/controller.PutSampleParams'
+          type: object
+      produces:
+      - text/plain
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+      summary: PutHandler
+      tags:
+      - Method
   /test_auth:
     get:
       description: TestAuth server

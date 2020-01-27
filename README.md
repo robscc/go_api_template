@@ -21,11 +21,10 @@ go api 快速搭建框架
 
     - [x] Auth
     - [x] Get
-    - [ ] Post
-    - [ ] PostFile
-    - [ ] Put
-    - [ ] Header
-    - [ ] Delete
+    - [x] Post
+    - [x] PostFile
+    - [x] Put
+    - [x] Delete
 
 - [ ] 加入vscode配置
 - [ ] 加入动态新增handler的支持(也许要支持autocompletion)

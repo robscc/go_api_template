@@ -41,5 +41,14 @@ func ServeAPI(cfg *Config) error {
 	r.GET("/test_auth", controller.TestAuth)
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
+	sampleGroup := r.Group("/sample")
+	{
+		sampleGroup.GET("/get_handler", controller.GetHandler)
+		sampleGroup.POST("/post_handler", controller.PostHandler)
+		sampleGroup.POST("/post_file_handler", controller.PostFileHandler)
+		sampleGroup.PUT("/put_handler", controller.PutHandler)
+		sampleGroup.DELETE("/delete_handler", controller.DeleteHandler)
+	}
+
 	return r.Run(cfg.BindAddr)
 }

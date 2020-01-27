@@ -32,6 +32,152 @@
                 }
             }
         },
+        "/sample/delete_handler": {
+            "delete": {
+                "description": "method sample delete",
+                "tags": [
+                    "Method"
+                ],
+                "summary": "DeleteHandler",
+                "responses": {
+                    "204": {}
+                }
+            }
+        },
+        "/sample/get_handler": {
+            "get": {
+                "description": "method sample get",
+                "produces": [
+                    "text/plain"
+                ],
+                "tags": [
+                    "Method"
+                ],
+                "summary": "GetHandler",
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/sample/post_file_handler": {
+            "post": {
+                "description": "method sample post file",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "text/plain"
+                ],
+                "tags": [
+                    "Method"
+                ],
+                "summary": "PostFileHandler",
+                "parameters": [
+                    {
+                        "type": "file",
+                        "description": "the file to upload",
+                        "name": "file",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "bad request",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/sample/post_handler": {
+            "post": {
+                "description": "method sample post",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "text/plain"
+                ],
+                "tags": [
+                    "Method"
+                ],
+                "summary": "PostHandler",
+                "parameters": [
+                    {
+                        "description": "PostSampleParams the sample_key is required",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/controller.PostSampleParams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "bad request",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/sample/put_handle": {
+            "put": {
+                "description": "method sample put",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "text/plain"
+                ],
+                "tags": [
+                    "Method"
+                ],
+                "summary": "PutHandler",
+                "parameters": [
+                    {
+                        "description": "PutSampleParams the sample_key is required",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/controller.PutSampleParams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "/test_auth": {
             "get": {
                 "security": [
@@ -54,6 +200,32 @@
                             "type": "string"
                         }
                     }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "controller.PostSampleParams": {
+            "type": "object",
+            "required": [
+                "sample_Key"
+            ],
+            "properties": {
+                "sample_Key": {
+                    "description": "sample key is sample and must be valued when post to server",
+                    "type": "string"
+                }
+            }
+        },
+        "controller.PutSampleParams": {
+            "type": "object",
+            "required": [
+                "sample_Key"
+            ],
+            "properties": {
+                "sample_Key": {
+                    "description": "sample key is sample and must be valued when post to server",
+                    "type": "string"
                 }
             }
         }
